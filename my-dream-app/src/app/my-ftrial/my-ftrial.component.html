@@ -1,0 +1,77 @@
+<h2> Welcome to my {{title}}</h2>
+<p>
+  {{welcomeMessage}}
+</p>
+<div>Name:{{student.name}}-- Age:{{student.age}}</div>
+<ul>
+  
+  <li *ngFor="let name of students"> {{name}}</li>
+  
+</ul>
+
+<ul>
+  <li *ngFor="let teachers of teachers">Name:{{teachers.name}}---Subject:{{teachers.subject}}</li>
+  </ul>
+  <div class="if-class">
+    <label>First lecture</label>
+    <span *ngIf="day === 'Monday'"> Angular Development</span>
+    <span *ngIf="day === 'Tuesday'">PPL</span>
+  </div>
+
+  <div [ngSwitch]="day" class="if-class">
+    <label>First lecture</label>
+    <span *ngSwitchCase =" 'Monday'"> Angular Development</span>
+    <span *ngSwitchCase =" 'Tuesday'">PPL</span>
+    <span *ngSwitchDefault>Enjoy your day!</span>
+  </div>
+<br>
+  <img src="./assets/download.jpeg" width="30%">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <p>{{myName}}</p>
+<input type="text" [ngModel]="myName" (ngModelChange)="myName=$event">
+<input type="text" [(ngModel)]="myName" >
+
+
+  <div style="background-color:pink; color: purple;"> my color keep changing</div>
+ 
+ 
+ <div class="blue-background" [class.white-text] = "showWhiteText">My color keep changing</div>
+
+ <div class="blue-background" [ngClass] = "{ 'white-text' :showWhiteText , 'bold-font' :showBoldText}" >My color keep changing</div>
+
+ 1<img [src]="facebookTmageLink" width="30%" (click)="sayhello()">
+  <br>
+
+
+
+
+
+
+
+
+
+
+
